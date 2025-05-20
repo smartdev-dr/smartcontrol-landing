@@ -35,10 +35,10 @@ function Contact() {
                     <div>
                       <h3 className="aai-contact-widget-title">Información de contacto</h3>
                       <p className="aai-contact-support">
-                        Abre un chat o llámanos al
+                      Correo electrónico:
                       </p>
-                      <a href="tel:8093962749" className="aai-contact-address">
-                        +1 (809) 396 2749
+                      <a ma className="aai-contact-address">
+                       contact@smartcontrol.com.do
                       </a>
                     </div>
                   </div>
