@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 function Hero() {
   const content = useMemo(
-    () => ["Facturación y Finanzas","documentación de Proyectos","Cotizaciones","Nómina de Empleados", "Inventario y Compras", "Reportes Inteligentes",],
+    () => ["Facturación y Finanzas","Documentación de Proyectos","Cotizaciones","Nómina de Empleados", "Inventario y Compras", "Reportes Inteligentes",],
     []
   );
   const [contents, setContents] = useState("");
@@ -55,22 +55,24 @@ function Hero() {
           <div className="col-lg-12 col-xl-7">
             <div className="aai-hero-one-content">
               <h1 className="aai-hero-one-title">
-                Software de Gestión para Proyectos de Construcción <br />
-                <span className="gradient-text typing-animation">
+                Software de Gestión para Proyectos de Construcción
+              </h1>
+                <span className="gradient-text typing-animation aai-hero-one-title">
                   {contents}
                   <span
+
+                    className="aai-hero-one-title"
                     style={{
                       opacity: 0,
                     }}
                   ></span>
                 </span>
                 <span
-                  className={jumping ? "cursor" : ""}
+                  className={jumping ? "cursor aai-hero-one-title" : "aai-hero-one-title"}
                   style={{ background: "transparent", color: "white" }}
                 >
                   |
                 </span>
-              </h1>
               <p className="aai-hero-one-desc">
                Administra tus proyectos, controla tu inventario, factura, 
                paga nóminas y toma decisiones con reportes automáticos. 
