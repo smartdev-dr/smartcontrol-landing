@@ -1,8 +1,41 @@
-import React from "react";
+import { useState } from "react";
 import contact1 from "../../assets/img/icons/contact-1.svg";
 import contact2 from "../../assets/img/icons/contact-2.svg";
 
 function Contact() {
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+  const [submitted, setSubmitted] = useState(false);
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+       await fetch('/api/send-email', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          fullname: form?.fullname || '',
+          email: form?.email || '',
+          phone: form?.phone || '',
+          message: form?.message || '',
+          }),
+      });
+    } catch (error) {
+      console.log(error);
+      
+    }finally{
+      setSubmitted(true);
+    }
+    
+
+  };
+
   return (
     <section className="aai-contact-form">
       <div className="container">
@@ -53,24 +86,45 @@ function Contact() {
                   <div className="col-xl-6">
                     <div className="aai-form-input">
                       <input
+                      onChange={handleChange}
+                      value={form.fullname}
+                      name="fullname"
                         type="text"
                         className="form-control shadow-none"
-                        placeholder="Nombre Completo"
+                        placeholder="Nombre de contacto"
                       />
                     </div>
                   </div>
                   <div className="col-xl-6">
                     <div className="aai-form-input">
                       <input
+                      onChange={handleChange}
+                      value={form.email}
+                      name="email"
                         type="text"
                         className="form-control shadow-none"
                         placeholder="Correo"
                       />
                     </div>
                   </div>
+                   <div className="col-full">
+                    <div className="aai-form-input">
+                      <input
+                      onChange={handleChange}
+                      value={form.phone}
+                      name="phone"
+                        type="text"
+                        className="form-control shadow-none"
+                        placeholder="Telefono o celular"
+                      />
+                    </div>
+                  </div>
                   <div className="col-xl-12">
                     <div className="aai-form-input">
                       <textarea
+                      onChange={handleChange}
+                      value={form.message}
+                      name="message"
                         className="form-control shadow-none text-area"
                         placeholder="Mensaje"
                       ></textarea>
@@ -78,8 +132,10 @@ function Contact() {
                   </div>
                   <div className="col-xl-12">
                     <div className="d-flex justify-content-start">
-                      <button className="aai-btn btn-pill-solid">
-                       Enviar Mensaje
+                      <button className="aai-btn btn-pill-solid" type="button"
+                      onClick={handleSubmit}
+                      >
+                    Solicitar demo
                       </button>
                     </div>
                   </div>

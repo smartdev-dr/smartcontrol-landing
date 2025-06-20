@@ -79,9 +79,9 @@ function Hero() {
                Todo desde una sola plataforma diseñada para empresas constructoras.
               </p>
               <div className="mt-5 d-flex flex-column flex-md-row aai-btns-group">
-                {/* <Link to="/prices" className="aai-btn btn-pill-solid">
-                  Ver más
-                </Link> */}
+                <Link to="/contact" className="aai-btn btn-pill-solid">
+              Solicitar demo
+                </Link>
                 <Link to="/services" className="aai-gradient-outline-btn">
                   Más información
                 </Link>
