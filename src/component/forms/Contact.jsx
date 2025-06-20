@@ -9,7 +9,7 @@ function Contact() {
     name: "",
     email: "",
     phone: "",
-    message: "",
+    message: "Solicitar demo de SmartControl",
   });
   const [submitted, setSubmitted] = useState(false);
   const handleChange = (e) => {
@@ -74,18 +74,24 @@ function Contact() {
                 <div className="aai-contact-widget mb-4">
                   <div className="aai-contact-widget-inner d-flex">
                     <div>
-                      <img src={contact2} alt="" />
+                      <img src={contact2} alt="cts" />
                     </div>
-                    <div>
-                      <h3 className="aai-contact-widget-title">Información de contacto</h3>
-                      <p className="aai-contact-support">
+                    <div style={{display:'flex',flexDirection:'column'}}>
+                      <h3 className="aai-contact-widget-title">Información de <br/>contacto</h3>
+                      {/* <p className="aai-contact-support">
                       Correo electrónico:
-                      </p>
-                      <a ma className="aai-contact-address">
+                      </p> */}
+                   
+                    </div>
+                    
+                  </div>
+              <div style={{padding:'10px', display: 'flex',
+                justifyContent:'center'
+              }}>
+                     <a ma className="aai-contact-address">
                        contact@smartcontrol.com.do
                       </a>
-                    </div>
-                  </div>
+              </div>
                 </div>
               </div>
             </div>
@@ -114,7 +120,7 @@ function Contact() {
                       name="email"
                         type="text"
                         className="form-control shadow-none"
-                        placeholder="Correo"
+                        placeholder="Correo electrónico"
                       />
                     </div>
                   </div>
@@ -126,7 +132,7 @@ function Contact() {
                       name="phone"
                         type="text"
                         className="form-control shadow-none"
-                        placeholder="Telefono o celular"
+                        placeholder="Telefono o celular de contacto"
                       />
                     </div>
                   </div>
