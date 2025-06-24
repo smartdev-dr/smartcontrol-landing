@@ -55,7 +55,7 @@ function Hero() {
           <div className="col-lg-12 col-xl-7">
             <div className="aai-hero-one-content">
               <h1 className="aai-hero-one-title">
-                Software de Gestión para Proyectos de Construcción
+                Software de Gestión de Proyectos
               </h1>
                 <span className="gradient-text typing-animation aai-hero-one-title">
                   {contents}
@@ -76,11 +76,12 @@ function Hero() {
               <p className="aai-hero-one-desc">
                Administra tus proyectos, controla tu inventario, factura, 
                paga nóminas y toma decisiones con reportes automáticos. 
-               Todo desde una sola plataforma diseñada para empresas constructoras.
+               Todo desde una sola plataforma diseñada para empresas constructoras pequeñas, medianas y grandes, 
+               contratistas, supervisores y administradores.
               </p>
               <div className="mt-5 d-flex flex-column flex-md-row aai-btns-group">
                 <Link to="/contact" className="aai-btn btn-pill-solid">
-              Solicitar demo
+              Solicitar demo gratuita
                 </Link>
                 <Link to="/services" className="aai-gradient-outline-btn">
                   Más información
@@ -88,7 +89,7 @@ function Hero() {
               </div>
             </div>
           </div>
-          <div className="col-lg-10 col-xl-5 mt-5 mt-lg-0">
+          <div className="col-lg-10 col-xl-5 mt-5 mt-lg-0 mt-xl-5">
             <div className="aai-hero-one-img">
               <img
                 src={dashboard}

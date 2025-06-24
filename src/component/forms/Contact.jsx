@@ -18,7 +18,8 @@ function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch('https://smartdev.com.do/api/onboarding/smartcontrol', {
+        alert("Solicitud enviada, nos pondremos en contacto con usted en breve.");
+        await fetch('https://smartdev.com.do/api/onboarding/smartcontrol', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -28,14 +29,13 @@ function Contact() {
           message: form?.message || '',
           }),
       });
-    
-      alert("Solicitud enviada, nos pondremos en contacto con usted en breve.");
       setForm({
         name: "",
         email: "",
         phone: "",
         message: "",
       });
+      
       navigate("/");
     } catch (error) {
       console.log(error);
